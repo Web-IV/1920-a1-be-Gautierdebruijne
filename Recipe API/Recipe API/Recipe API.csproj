@@ -5,5 +5,9 @@
     <RootNamespace>Recipe_API</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.2.3" />
+  </ItemGroup>
+
 
 </Project>

@@ -1,0 +1,32 @@
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.exe
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.csprojAssemblyReference.cache
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\staticwebassets\Recipe API.StaticWebAssets.Manifest.cache
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\staticwebassets\Recipe API.StaticWebAssets.xml
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.AssemblyInfoInputs.cache
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.AssemblyInfo.cs
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.RazorTargetAssemblyInfo.cache
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.deps.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.runtimeconfig.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.runtimeconfig.dev.json
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Recipe API.pdb
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.MvcApplicationPartsAssemblyInfo.cache
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.csproj.CopyComplete
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.dll
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Recipe API\Recipe API\obj\Debug\netcoreapp3.1\Recipe API.pdb
