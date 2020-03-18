@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Recipe_API.Models
 {
-    interface IMeetingRepository
+    public interface IMeetingRepository
     {
         Meeting GetBy(int id);
         bool TryGetMeeting(int id, out Meeting meeting);
