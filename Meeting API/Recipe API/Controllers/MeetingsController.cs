@@ -17,5 +17,11 @@ namespace Recipe_API.Controllers
         {
             _meetingRepository = context;
         }
+
+        [HttpGet]
+        public IEnumerable<Meeting> GetMeetings()
+        {
+            return _meetingRepository.GetAll().OrderBy(m => m.Name);
+        }
     }
 }

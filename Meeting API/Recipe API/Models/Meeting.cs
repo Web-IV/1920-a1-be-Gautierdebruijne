@@ -14,9 +14,11 @@ namespace Recipe_API.Models
         [Required]
         public string Name { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime Created { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime Planned { get; set; }
 
         [Required]

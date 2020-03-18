@@ -1,4 +1,5 @@
-﻿using Recipe_API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Recipe_API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,44 +9,54 @@ namespace Recipe_API.Data
 {
     public class MeetingRepository : IMeetingRepository
     {
+        private readonly MeetingContext _context;
+        private readonly DbSet<Meeting> _meetings;
+
         public void Add(Meeting meeting)
         {
-            throw new NotImplementedException();
+            _meetings.Add(meeting);
         }
 
         public void Delete(Meeting meeting)
         {
-            throw new NotImplementedException();
+            _meetings.Remove(meeting);
         }
 
         public IEnumerable<Meeting> GetAll()
         {
-            throw new NotImplementedException();
+            return _meetings.Include(m => m.Verkopers).ToList();
         }
 
         public Meeting GetBy(int id)
         {
-            throw new NotImplementedException();
+            return _meetings.Include(m => m.Verkopers).SingleOrDefault(m => m.Id == id);
         }
 
         public IEnumerable<Meeting> GetBy(string name = null, string verkoperName = null)
         {
-            throw new NotImplementedException();
+            var meetings = _meetings.Include(m => m.Verkopers).AsQueryable();
+            if (!string.IsNullOrEmpty(name))
+                meetings = meetings.Where(m => m.Name == name);
+            if (!string.IsNullOrEmpty(verkoperName))
+                meetings = meetings.Where(m => m.Verkopers.Any(m => m.Name == verkoperName));
+
+            return meetings.OrderBy(m => m.Planned);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
         public bool TryGetMeeting(int id, out Meeting meeting)
         {
-            throw new NotImplementedException();
+            meeting = _context.Meetings.Include(m => m.Verkopers).FirstOrDefault(m => m.Id == id);
+            return meeting != null;
         }
 
         public void Update(Meeting meeting)
         {
-            throw new NotImplementedException();
+            _context.Update(meeting);
         }
     }
 }

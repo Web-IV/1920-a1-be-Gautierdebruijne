@@ -98,7 +98,5 @@ D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cs
-D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cache
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.pdb
