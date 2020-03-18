@@ -5797,11 +5797,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Recipe API\\Recipe API\\Recipe API.csproj",
-      "projectName": "Recipe API",
-      "projectPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Recipe API\\Recipe API\\Recipe API.csproj",
+      "projectUniqueName": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\Meeting API.csproj",
+      "projectName": "Meeting API",
+      "projectPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\Meeting API.csproj",
       "packagesPath": "D:\\Users\\gauti\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Recipe API\\Recipe API\\obj\\",
+      "outputPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5854,7 +5854,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
