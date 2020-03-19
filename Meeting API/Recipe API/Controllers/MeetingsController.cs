@@ -23,5 +23,15 @@ namespace Recipe_API.Controllers
         {
             return _meetingRepository.GetAll().OrderBy(m => m.Name);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Meeting> GetMeeting(int id)
+        {
+            Meeting meeting = _meetingRepository.GetBy(id);
+            if (meeting == null)
+                return NotFound();
+
+            return meeting;
+        }
     }
 }
