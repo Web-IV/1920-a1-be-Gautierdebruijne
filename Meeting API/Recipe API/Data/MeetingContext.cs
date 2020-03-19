@@ -20,6 +20,16 @@ namespace Recipe_API.Data
 
             builder.Entity<Verkoper>().Property(v => v.Name).IsRequired().HasMaxLength(50);
             builder.Entity<Verkoper>().Property(v => v.Title).HasMaxLength(50);
+                
+            builder.Entity<Meeting>().HasData(
+                new Meeting { Id = 1, Name = "Familie Engels", Planned = DateTime.Now.AddDays(7) },
+                new Meeting { Id = 2, Name = "Dhr. de Bruijne", Planned = DateTime.Now.AddDays(9) }
+                );
+
+            builder.Entity<Verkoper>().HasData(
+                new { Id = 1, Name = "Jo de Bruijne", Title = "Verkoopsverantwoordelijke", MeetingId = 1 },
+                new { Id = 2, Name = "Stefaan Durwael", Title = "", MeetingId = 1}
+                );
         }
 
         public DbSet<Meeting> Meetings { get; set; }

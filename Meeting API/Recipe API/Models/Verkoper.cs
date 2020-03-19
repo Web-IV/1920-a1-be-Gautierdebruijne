@@ -18,6 +18,11 @@ namespace Recipe_API.Models
         #endregion
 
         #region Constructors
+        public Verkoper()
+        {
+            Title = "verkoper";
+        }
+
         public Verkoper(string name, string title)
         {
             Name = name;

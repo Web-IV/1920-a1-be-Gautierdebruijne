@@ -19,7 +19,7 @@ namespace Recipe_API.Data
             _context.Database.EnsureDeleted();
             if (_context.Database.EnsureCreated())
             {
-                //seeding
+                //seeding in context
             }
         }
     }

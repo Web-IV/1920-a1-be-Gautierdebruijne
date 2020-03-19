@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Recipe_API.Data;
+using Recipe_API.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Recipe_API
 {
@@ -27,10 +25,15 @@ namespace Recipe_API
         {
             services.AddControllers();
             services.AddSwaggerDocument();
+
+            services.AddDbContext<MeetingContext>(o => o.UseSqlServer(Configuration.GetConnectionString("MeetingContext")));
+
+            services.AddScoped<MeetingDataInitializer>();
+            services.AddScoped<IMeetingRepository, MeetingRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MeetingDataInitializer init)
         {
             if (env.IsDevelopment())
             {
@@ -50,6 +53,8 @@ namespace Recipe_API
             {
                 endpoints.MapControllers();
             });
+
+            init.InitializeData();
         }
     }
 }

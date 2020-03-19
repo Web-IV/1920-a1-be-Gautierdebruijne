@@ -12,6 +12,12 @@ namespace Recipe_API.Data
         private readonly MeetingContext _context;
         private readonly DbSet<Meeting> _meetings;
 
+        public MeetingRepository(MeetingContext context)
+        {
+            _context = context;
+            _meetings = context.Meetings;
+        }
+
         public void Add(Meeting meeting)
         {
             _meetings.Add(meeting);
@@ -25,7 +31,7 @@ namespace Recipe_API.Data
         public IEnumerable<Meeting> GetAll()
         {
             return _meetings.Include(m => m.Verkopers).ToList();
-        }
+        }   
 
         public Meeting GetBy(int id)
         {
