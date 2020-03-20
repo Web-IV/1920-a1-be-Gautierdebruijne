@@ -33,5 +33,29 @@ namespace Recipe_API.Controllers
 
             return meeting;
         }
+
+        [HttpPost] 
+        public ActionResult<Meeting> PostMeeting(Meeting meeting)
+        {
+            _meetingRepository.Add(meeting);
+            _meetingRepository.SaveChanges();
+
+            return CreatedAtAction(nameof(GetMeeting),
+                new { id = meeting.Id }, meeting);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutMeeting(int id, Meeting meeting)
+        {
+            if(id != meeting.Id)
+            {
+                return BadRequest();
+            }
+
+            _meetingRepository.Update(meeting);
+            _meetingRepository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
