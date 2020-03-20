@@ -34,6 +34,23 @@ namespace Recipe_API.Controllers
             return meeting;
         }
 
+        [HttpGet("{id}/verkopers/{verkoperId}")]
+        public ActionResult<Verkoper> GetVerkoper(int id, int verkoperId)
+        {
+            if(!_meetingRepository.TryGetMeeting(id, out var meeting))
+            {
+                return NotFound();
+            }
+
+            Verkoper verkoper = meeting.GetVerkoper(verkoperId);
+            if(verkoper == null)
+            {
+                return NotFound();
+            }
+
+            return verkoper;
+        }
+
         [HttpPost] 
         public ActionResult<Meeting> PostMeeting(Meeting meeting)
         {
@@ -42,6 +59,21 @@ namespace Recipe_API.Controllers
 
             return CreatedAtAction(nameof(GetMeeting),
                 new { id = meeting.Id }, meeting);
+        }
+
+        [HttpPost("{id}/verkopers")]
+        public ActionResult<Verkoper> PostVerkoper(int id, Verkoper verkoper)
+        {
+            if(!_meetingRepository.TryGetMeeting(id, out var meeting))
+            {
+                return NotFound();
+            }
+
+            var verkoperToCreate = new Verkoper(verkoper.Name, verkoper.Title);
+            meeting.AddVerkoper(verkoperToCreate);
+            _meetingRepository.SaveChanges();
+
+            return CreatedAtAction("GetVerkoper", new { id = meeting.Id, verkoperId = verkoperToCreate.Id }, verkoperToCreate);
         }
 
         [HttpPut("{id}")]
@@ -57,5 +89,23 @@ namespace Recipe_API.Controllers
 
             return NoContent();
         }
-    }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMeeting(int id)
+        {
+            Meeting meeting = _meetingRepository.GetBy(id);
+
+            if(meeting == null)
+            {
+                return NotFound();
+            }
+
+            _meetingRepository.Delete(meeting);
+            _meetingRepository.SaveChanges();
+
+            return NoContent();
+        }
+
+
+    }   
 }

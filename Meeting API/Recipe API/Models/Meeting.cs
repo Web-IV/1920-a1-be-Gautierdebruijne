@@ -40,7 +40,7 @@ namespace Recipe_API.Models
         #endregion
 
         #region Methods
-        public void addVerkoper(Verkoper verkoper) => Verkopers.Add(verkoper);
+        public void AddVerkoper(Verkoper verkoper) => Verkopers.Add(verkoper);
 
         public Verkoper GetVerkoper(int id) => Verkopers.SingleOrDefault(i => i.Id == id);
         #endregion
