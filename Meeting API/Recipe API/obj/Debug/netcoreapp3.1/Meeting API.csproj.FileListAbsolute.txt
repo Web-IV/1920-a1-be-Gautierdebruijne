@@ -132,3 +132,5 @@ D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Meeting API.xml
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.xml

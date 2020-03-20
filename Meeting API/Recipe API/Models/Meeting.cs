@@ -9,6 +9,9 @@ namespace Recipe_API.Models
     public class Meeting
     {
         #region Properties
+        /// <summary>
+        /// 
+        /// </summary>
         public int Id { get; set; }
 
         [Required]

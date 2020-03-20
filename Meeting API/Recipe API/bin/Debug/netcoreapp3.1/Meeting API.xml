@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Meeting API</name>
+    </assembly>
+    <members>
+        <member name="M:Recipe_API.Controllers.MeetingsController.GetMeetings">
+            <summary>
+            Geeft alle geplande meetings
+            </summary>
+            <returns>Geplande meetings;</returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.GetMeeting(System.Int32)">
+            <summary>
+            Geeft de meeting met gekozen "id"
+            </summary>
+            <param name="id"></param>
+            <returns>Meeting met gekozen id; </returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.GetVerkoper(System.Int32,System.Int32)">
+            <summary>
+            Geeft de verkoper met het gekozen id van een bepaalde meeting
+            </summary>
+            <param name="id"></param>
+            <param name="verkoperId"></param>
+            <returns>Verkoper met gekozen id van de bepaalde meeting; </returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.PostMeeting(Recipe_API.Models.Meeting)">
+            <summary>
+            Maakt een nieuwe meeting aan
+            </summary>
+            <param name="meeting"></param>
+            <returns>Nieuwe meeting; </returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.PostVerkoper(System.Int32,Recipe_API.Models.Verkoper)">
+            <summary>
+            Voegt een verkoper toe aan een bepaalde meeting
+            </summary>
+            <param name="id"></param>
+            <param name="verkoper"></param>
+            <returns>Toegevoegde verkoper aan de bepaalde meeting; </returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.PutMeeting(System.Int32,Recipe_API.Models.Meeting)">
+            <summary>
+            Wijzig een bestaande meeting
+            </summary>
+            <param name="id"></param>
+            <param name="meeting"></param>
+            <returns>Gewijzigde meeting; </returns>
+        </member>
+        <member name="M:Recipe_API.Controllers.MeetingsController.DeleteMeeting(System.Int32)">
+            <summary>
+            Verwijderd een bestaande meeting
+            </summary>
+            <param name="id"></param>
+            <returns>Response code; </returns>
+        </member>
+        <member name="P:Recipe_API.Models.Meeting.Id">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

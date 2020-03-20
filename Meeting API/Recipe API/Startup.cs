@@ -30,6 +30,14 @@ namespace Recipe_API
 
             services.AddScoped<MeetingDataInitializer>();
             services.AddScoped<IMeetingRepository, MeetingRepository>();
+
+            services.AddOpenApiDocument(d =>
+            {
+                d.DocumentName = "apidocs";
+                d.Title = "Meeting API";
+                d.Version = "v0.1";
+                d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
