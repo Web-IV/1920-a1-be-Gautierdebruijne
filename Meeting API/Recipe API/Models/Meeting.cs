@@ -9,9 +9,6 @@ namespace Recipe_API.Models
     public class Meeting
     {
         #region Properties
-        /// <summary>
-        /// 
-        /// </summary>
         public int Id { get; set; }
 
         [Required]
@@ -24,7 +21,6 @@ namespace Recipe_API.Models
         [DataType(DataType.DateTime)]
         public DateTime Planned { get; set; }
 
-        [Required]
         public ICollection<Verkoper> Verkopers { get; private set; }
         #endregion
 

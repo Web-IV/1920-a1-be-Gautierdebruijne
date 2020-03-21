@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Recipe_API.DTO;
 using Recipe_API.Models;
 
 namespace Recipe_API.Controllers
@@ -83,13 +84,16 @@ namespace Recipe_API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Meeting> PostMeeting(Meeting meeting)
+        public ActionResult<Meeting> PostMeeting(MeetingDTO meeting)
         {
-            _meetingRepository.Add(meeting);
+            Meeting meetingToCreate = new Meeting() { Name = meeting.Name, Planned = meeting.Planned };
+            foreach (var i in meeting.Verkopers)
+                meetingToCreate.AddVerkoper(new Verkoper(i.Name, i.Title));
+            
+            _meetingRepository.Add(meetingToCreate);
             _meetingRepository.SaveChanges();
 
-            return CreatedAtAction(nameof(GetMeeting),
-                new { id = meeting.Id }, meeting);
+            return CreatedAtAction(nameof(GetMeeting), new { id = meetingToCreate.Id }, meetingToCreate);
         }
 
         /// <summary>
@@ -101,7 +105,7 @@ namespace Recipe_API.Controllers
         [HttpPost("{id}/verkopers")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Verkoper> PostVerkoper(int id, Verkoper verkoper)
+        public ActionResult<Verkoper> PostVerkoper(int id, VerkoperDTO verkoper)
         {
             if(!_meetingRepository.TryGetMeeting(id, out var meeting))
             {
