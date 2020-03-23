@@ -38,6 +38,8 @@ namespace Recipe_API
                 d.Version = "v0.1";
                 d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
             });
+
+            services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +58,7 @@ namespace Recipe_API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("AllowAllOrigins");
 
             app.UseEndpoints(endpoints =>
             {

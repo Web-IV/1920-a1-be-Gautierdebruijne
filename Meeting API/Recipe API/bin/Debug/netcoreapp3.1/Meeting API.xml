@@ -25,14 +25,14 @@
             <param name="verkoperId"></param>
             <returns>Verkoper met gekozen id van de bepaalde meeting; </returns>
         </member>
-        <member name="M:Recipe_API.Controllers.MeetingsController.PostMeeting(Recipe_API.Models.Meeting)">
+        <member name="M:Recipe_API.Controllers.MeetingsController.PostMeeting(Recipe_API.DTO.MeetingDTO)">
             <summary>
             Maakt een nieuwe meeting aan
             </summary>
             <param name="meeting"></param>
             <returns>Nieuwe meeting; </returns>
         </member>
-        <member name="M:Recipe_API.Controllers.MeetingsController.PostVerkoper(System.Int32,Recipe_API.Models.Verkoper)">
+        <member name="M:Recipe_API.Controllers.MeetingsController.PostVerkoper(System.Int32,Recipe_API.DTO.VerkoperDTO)">
             <summary>
             Voegt een verkoper toe aan een bepaalde meeting
             </summary>
@@ -54,11 +54,6 @@
             </summary>
             <param name="id"></param>
             <returns>Response code; </returns>
-        </member>
-        <member name="P:Recipe_API.Models.Meeting.Id">
-            <summary>
-            
-            </summary>
         </member>
     </members>
 </doc>
