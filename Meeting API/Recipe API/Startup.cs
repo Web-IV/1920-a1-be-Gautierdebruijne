@@ -1,15 +1,20 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Recipe_API.Data;
-using Recipe_API.Models;
+using Microsoft.IdentityModel.Tokens;
+using NSwag;
+using NSwag.Generation.Processors.Security;
+using MeetingAPI.Data;
+using MeetingAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
-namespace Recipe_API
+namespace MeetingAPI
 {
     public class Startup
     {
@@ -37,6 +42,38 @@ namespace Recipe_API
                 d.Title = "Meeting API";
                 d.Version = "v0.1";
                 d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
+
+                //d.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme 
+                //{ 
+                //    Type = SwaggerSecuritySchemeType.ApiKey, 
+                //    Name = "Authorization", 
+                //    In = SwaggerSecurityApiKeyLocation.Header, 
+                //    Description = "Copy 'Bearer' + valid JWT token into field" 
+                //}));
+
+                //Doesn't find all classes with given packages
+
+                d.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme 
+                { 
+                    Type = OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Copy 'Bearer' + valid JWT token into field"
+                });
+                
+                d.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            });
+
+            services.AddAuthentication(x => { x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false; x.SaveToken = true; x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    RequireExpirationTime = true
+                };
             });
 
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
@@ -58,6 +95,7 @@ namespace Recipe_API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
             app.UseCors("AllowAllOrigins");
 
             app.UseEndpoints(endpoints =>

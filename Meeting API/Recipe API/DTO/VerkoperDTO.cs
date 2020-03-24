@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Recipe_API.DTO
+namespace MeetingAPI.DTO
 {
     public class VerkoperDTO
     {

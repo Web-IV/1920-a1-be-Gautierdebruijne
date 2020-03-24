@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Recipe_API.Data
+namespace MeetingAPI.Data
 {
     public class MeetingDataInitializer
     {

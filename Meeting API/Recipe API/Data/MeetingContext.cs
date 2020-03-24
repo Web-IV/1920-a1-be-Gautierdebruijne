@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Recipe_API.Models;
+using MeetingAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Recipe_API.Data
+namespace MeetingAPI.Data
 {
     public class MeetingContext : DbContext  
     {
@@ -33,6 +33,6 @@ namespace Recipe_API.Data
         }
 
         public DbSet<Meeting> Meetings { get; set; }
-
+        public DbSet<Customer> Customers { get; set; }
     }
 }

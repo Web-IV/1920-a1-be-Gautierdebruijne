@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Recipe_API.Models
+namespace MeetingAPI.Models
 {
     public class Verkoper
     {

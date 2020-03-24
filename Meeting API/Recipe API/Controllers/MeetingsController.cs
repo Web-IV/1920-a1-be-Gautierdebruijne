@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Recipe_API.DTO;
-using Recipe_API.Models;
+using MeetingAPI.DTO;
+using MeetingAPI.Models;
 
-namespace Recipe_API.Controllers
+namespace MeetingAPI.Controllers
 {
-    [Route("api/meetings")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]

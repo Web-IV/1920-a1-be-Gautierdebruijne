@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Recipe_API.DTO
+namespace MeetingAPI.DTO
 {
     public class MeetingDTO
     {
