@@ -13,6 +13,8 @@ using MeetingAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace MeetingAPI
 {
@@ -29,18 +31,40 @@ namespace MeetingAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerDocument();
-
             services.AddDbContext<MeetingContext>(o => o.UseSqlServer(Configuration.GetConnectionString("MeetingContext")));
 
             services.AddScoped<MeetingDataInitializer>();
             services.AddScoped<IMeetingRepository, MeetingRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(i => i.User.RequireUniqueEmail = true).AddEntityFrameworkStores<MeetingContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+
+                // Lockout settings.
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // User settings.
+                options.User.AllowedUserNameCharacters =
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail = true;
+            });
 
             services.AddOpenApiDocument(d =>
             {
                 d.DocumentName = "apidocs";
                 d.Title = "Meeting API";
-                d.Version = "v0.1";
+                d.Version = "v0.2";
                 d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
 
                 //d.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme 
@@ -103,7 +127,7 @@ namespace MeetingAPI
                 endpoints.MapControllers();
             });
 
-            init.InitializeData();
+            init.InitializeData().Wait();
         }
     }
 }

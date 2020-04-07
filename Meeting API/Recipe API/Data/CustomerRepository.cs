@@ -18,6 +18,11 @@ namespace MeetingAPI.Data
             _customers = context.Customers;
         }
 
+        public Customer GetBy(string name)
+        {
+            return _customers.SingleOrDefault(c => c.FirstName == name);
+        }
+
         public void Add(Customer customer)
         {
             _customers.Add(customer);

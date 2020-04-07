@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\gauti\\Source\\Repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj": {}
+    "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj": {}
   },
   "projects": {
-    "D:\\Users\\gauti\\Source\\Repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj": {
+    "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\gauti\\Source\\Repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj",
+        "projectUniqueName": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj",
         "projectName": "MeetingAPI",
-        "projectPath": "D:\\Users\\gauti\\Source\\Repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj",
+        "projectPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\MeetingAPI.csproj",
         "packagesPath": "D:\\Users\\gauti\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\gauti\\Source\\Repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\obj\\",
+        "outputPath": "D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting API\\Recipe API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
