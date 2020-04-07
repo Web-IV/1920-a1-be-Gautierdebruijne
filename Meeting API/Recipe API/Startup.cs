@@ -82,15 +82,23 @@ namespace MeetingAPI
                     Type = OpenApiSecuritySchemeType.ApiKey,
                     Name = "Authorization",
                     In = OpenApiSecurityApiKeyLocation.Header,
-                    Description = "Copy 'Bearer' + valid JWT token into field"
+                    Description = "Write: Bearer {your JWT token}"
                 });
                 
                 d.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
             });
 
-            services.AddAuthentication(x => { x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; }).AddJwtBearer(x =>
+            services.AddAuthentication(x => 
+            { 
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
             {
-                x.RequireHttpsMetadata = false; x.SaveToken = true; x.TokenValidationParameters = new TokenValidationParameters
+                x.RequireHttpsMetadata = false; 
+                x.SaveToken = true; 
+                x.TokenValidationParameters = new TokenValidationParameters
+
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),

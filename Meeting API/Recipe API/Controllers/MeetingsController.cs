@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MeetingAPI.DTO;
 using MeetingAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace MeetingAPI.Controllers
 {
@@ -13,13 +15,16 @@ namespace MeetingAPI.Controllers
     [Produces("application/json")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class MeetingsController : ControllerBase
     {
         private readonly IMeetingRepository _meetingRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-        public MeetingsController(IMeetingRepository context)
+        public MeetingsController(IMeetingRepository meetingRepo, ICustomerRepository customerRepo)
         {
-            _meetingRepository = context;
+            _meetingRepository = meetingRepo;
+            _customerRepository = customerRepo;
         }
 
         /// <summary>
@@ -29,9 +34,12 @@ namespace MeetingAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IEnumerable<Meeting> GetMeetings()
+        [AllowAnonymous]
+        public IEnumerable<Meeting> GetMeetings(string naam = null, string verkoper = null)
         {
-            return _meetingRepository.GetAll().OrderBy(m => m.Name);
+            if (string.IsNullOrEmpty(naam) && string.IsNullOrEmpty(verkoper))
+                return _meetingRepository.GetAll().OrderBy(m => m.Planned);
+            return _meetingRepository.GetBy(naam, verkoper);
         }
 
         /// <summary>

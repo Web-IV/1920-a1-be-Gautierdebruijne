@@ -18,6 +18,7 @@ namespace MeetingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class AccountController : ControllerBase
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -60,8 +61,8 @@ namespace MeetingAPI.Controllers
         {
             IdentityUser user = new IdentityUser { UserName = model.Email, Email = model.Email };
             Customer customer = new Customer { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
-
             var result = await _userManager.CreateAsync(user, model.Password);
+
             if (result.Succeeded)
             {
                 _customerRepository.Add(customer);
@@ -72,6 +73,14 @@ namespace MeetingAPI.Controllers
             }
 
             return BadRequest();
+        }
+
+        [AllowAnonymous]
+        [HttpGet("checkusername")]
+        public async Task<ActionResult<Boolean>> CheckAvailableUserName(string email)
+        {
+            var user = await _userManager.FindByNameAsync(email);
+            return user == null;
         }
 
         private string GetToken(IdentityUser user)
