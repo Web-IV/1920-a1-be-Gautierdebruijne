@@ -4,7 +4,7 @@
         <name>MeetingAPI</name>
     </assembly>
     <members>
-        <member name="M:MeetingAPI.Controllers.MeetingsController.GetMeetings">
+        <member name="M:MeetingAPI.Controllers.MeetingsController.GetMeetings(System.String,System.String)">
             <summary>
             Geeft alle geplande meetings
             </summary>

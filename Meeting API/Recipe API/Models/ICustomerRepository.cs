@@ -7,6 +7,7 @@ namespace MeetingAPI.Models
 {
     public interface ICustomerRepository
     {
+        Customer GetBy(string name);
         void Add(Customer customer);
         void Delete(Customer customer);
         void SaveChanges();

@@ -50,6 +50,7 @@ namespace MeetingAPI.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public ActionResult<Meeting> GetMeeting(int id)
         {
             Meeting meeting = _meetingRepository.GetBy(id);
@@ -68,6 +69,7 @@ namespace MeetingAPI.Controllers
         [HttpGet("{id}/verkopers/{verkoperId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public ActionResult<Verkoper> GetVerkoper(int id, int verkoperId)
         {
             if(!_meetingRepository.TryGetMeeting(id, out var meeting))

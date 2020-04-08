@@ -147,3 +147,4 @@ D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.dll
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.xml
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.pdb
+D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.csprojAssemblyReference.cache
