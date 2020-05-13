@@ -1,25 +1,30 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Recipe_API.DTO;
-using Recipe_API.Models;
+using MeetingAPI.DTO;
+using MeetingAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace Recipe_API.Controllers
+namespace MeetingAPI.Controllers
 {
-    [Route("api/meetings")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class MeetingsController : ControllerBase
     {
         private readonly IMeetingRepository _meetingRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-        public MeetingsController(IMeetingRepository context)
+        public MeetingsController(IMeetingRepository meetingRepo, ICustomerRepository customerRepo)
         {
-            _meetingRepository = context;
+            _meetingRepository = meetingRepo;
+            _customerRepository = customerRepo;
         }
 
         /// <summary>
@@ -29,9 +34,12 @@ namespace Recipe_API.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IEnumerable<Meeting> GetMeetings()
+        [AllowAnonymous]
+        public IEnumerable<Meeting> GetMeetings(string naam = null, string verkoper = null)
         {
-            return _meetingRepository.GetAll().OrderBy(m => m.Name);
+            if (string.IsNullOrEmpty(naam) && string.IsNullOrEmpty(verkoper))
+                return _meetingRepository.GetAll().OrderBy(m => m.Planned);
+            return _meetingRepository.GetBy(naam, verkoper);
         }
 
         /// <summary>
@@ -42,6 +50,7 @@ namespace Recipe_API.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public ActionResult<Meeting> GetMeeting(int id)
         {
             Meeting meeting = _meetingRepository.GetBy(id);
@@ -60,6 +69,7 @@ namespace Recipe_API.Controllers
         [HttpGet("{id}/verkopers/{verkoperId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public ActionResult<Verkoper> GetVerkoper(int id, int verkoperId)
         {
             if(!_meetingRepository.TryGetMeeting(id, out var meeting))

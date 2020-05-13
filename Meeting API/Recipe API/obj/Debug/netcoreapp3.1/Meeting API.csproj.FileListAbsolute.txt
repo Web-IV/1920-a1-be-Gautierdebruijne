@@ -115,8 +115,6 @@ D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cs
-D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cache
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -134,3 +132,19 @@ D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Meeting API.xml
 D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.xml
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\gauti\Source\Repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\Meeting API.MvcApplicationPartsAssemblyInfo.cache

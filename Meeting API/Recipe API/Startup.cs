@@ -1,15 +1,22 @@
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Recipe_API.Data;
-using Recipe_API.Models;
+using Microsoft.IdentityModel.Tokens;
+using NSwag;
+using NSwag.Generation.Processors.Security;
+using MeetingAPI.Data;
+using MeetingAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
+using System;
 
-namespace Recipe_API
+namespace MeetingAPI
 {
     public class Startup
     {
@@ -24,19 +31,81 @@ namespace Recipe_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerDocument();
-
             services.AddDbContext<MeetingContext>(o => o.UseSqlServer(Configuration.GetConnectionString("MeetingContext")));
 
             services.AddScoped<MeetingDataInitializer>();
             services.AddScoped<IMeetingRepository, MeetingRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(i => i.User.RequireUniqueEmail = true).AddEntityFrameworkStores<MeetingContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+
+                // Lockout settings.
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // User settings.
+                options.User.AllowedUserNameCharacters =
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail = true;
+            });
 
             services.AddOpenApiDocument(d =>
             {
                 d.DocumentName = "apidocs";
                 d.Title = "Meeting API";
-                d.Version = "v0.1";
+                d.Version = "v0.2";
                 d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
+
+                //d.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme 
+                //{ 
+                //    Type = SwaggerSecuritySchemeType.ApiKey, 
+                //    Name = "Authorization", 
+                //    In = SwaggerSecurityApiKeyLocation.Header, 
+                //    Description = "Copy 'Bearer' + valid JWT token into field" 
+                //}));
+
+                //Doesn't find all classes with given packages
+
+                d.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme 
+                { 
+                    Type = OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Write: Bearer {your JWT token}"
+                });
+                
+                d.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            });
+
+            services.AddAuthentication(x => 
+            { 
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false; 
+                x.SaveToken = true; 
+                x.TokenValidationParameters = new TokenValidationParameters
+
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    RequireExpirationTime = true
+                };
             });
 
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
@@ -58,6 +127,7 @@ namespace Recipe_API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
             app.UseCors("AllowAllOrigins");
 
             app.UseEndpoints(endpoints =>
@@ -65,7 +135,7 @@ namespace Recipe_API
                 endpoints.MapControllers();
             });
 
-            init.InitializeData();
+            init.InitializeData().Wait();
         }
     }
 }
