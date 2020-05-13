@@ -25,9 +25,10 @@ namespace MeetingAPI.Data
             {
                 //seeding in context
 
-                Customer customer = new Customer { Email = "gautier.de.bruijne@hotmail.com", FirstName = "Gautier", LastName = "de Bruijne" };
+                Customer customer = new Customer { Email = "gautier@gmail.com", FirstName = "Gautier", LastName = "de Bruijne" };
                 _context.Customers.Add(customer);
-                await CreateUser(customer.Email, "Gautier98");
+
+                await CreateUser(customer.Email, "Meeting3.");
                 _context.SaveChanges();
             }
         }
