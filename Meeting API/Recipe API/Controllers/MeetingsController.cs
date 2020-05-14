@@ -35,11 +35,11 @@ namespace MeetingAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [AllowAnonymous]
-        public IEnumerable<Meeting> GetMeetings(string naam = null, string verkoper = null)
+        public IEnumerable<Meeting> GetMeetings(string name = null, string verkoper = null)
         {
-            if (string.IsNullOrEmpty(naam) && string.IsNullOrEmpty(verkoper))
+            if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(verkoper))
                 return _meetingRepository.GetAll().OrderBy(m => m.Planned);
-            return _meetingRepository.GetBy(naam, verkoper);
+            return _meetingRepository.GetBy(name, verkoper);
         }
 
         /// <summary>
