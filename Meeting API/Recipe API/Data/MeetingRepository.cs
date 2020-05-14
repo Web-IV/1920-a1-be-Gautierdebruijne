@@ -42,7 +42,7 @@ namespace MeetingAPI.Data
         {
             var meetings = _meetings.Include(m => m.Verkopers).AsQueryable();
             if (!string.IsNullOrEmpty(name))
-                meetings = meetings.Where(m => m.Name == name);
+                meetings = meetings.Where(m => m.Name.Contains(name));
             if (!string.IsNullOrEmpty(verkoperName))
                 meetings = meetings.Where(m => m.Verkopers.Any(m => m.Name == verkoperName));
 
