@@ -17,7 +17,7 @@ namespace MeetingAPI.Models
         [DataType(DataType.DateTime)]
         public DateTime Created { get; set; }
 
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         public ICollection<Verkoper> Verkopers { get; private set; }
         #endregion
@@ -29,7 +29,7 @@ namespace MeetingAPI.Models
             Created = DateTime.Now;
         }
 
-        public Meeting(string name, string planned) : this()
+        public Meeting(string name, DateTime planned) : this()
         {
             Name = name;
             Date = planned;

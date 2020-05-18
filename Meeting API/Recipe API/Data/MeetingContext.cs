@@ -28,8 +28,8 @@ namespace MeetingAPI.Data
             builder.Entity<Customer>().Property(c => c.LastName).HasMaxLength(50);
                 
             builder.Entity<Meeting>().HasData(
-                new Meeting { Id = 1, Name = "Pascale Engels", Date = "test" },
-                new Meeting { Id = 2, Name = "Gautier de Bruijne", Date = "test" }
+                new Meeting { Id = 1, Name = "Pascale Engels", Date = DateTime.Now.AddDays(2)},
+                new Meeting { Id = 2, Name = "Gautier de Bruijne", Date = DateTime.Now.AddDays(7)}
                 );
 
             builder.Entity<Verkoper>().HasData(
