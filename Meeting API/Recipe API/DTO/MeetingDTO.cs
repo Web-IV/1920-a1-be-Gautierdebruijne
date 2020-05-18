@@ -11,8 +11,7 @@ namespace MeetingAPI.DTO
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public DateTime Planned { get; set; }
+        public string Date { get; set; }
 
         public IList<VerkoperDTO> Verkopers { get; set; }
 

@@ -18,7 +18,7 @@ namespace MeetingAPI.Data
 
             builder.Entity<Meeting>().HasMany(m => m.Verkopers).WithOne().IsRequired().HasForeignKey("MeetingId");
             builder.Entity<Meeting>().Property(m => m.Name).IsRequired().HasMaxLength(50);
-            builder.Entity<Meeting>().Property(m => m.Planned).IsRequired();
+            builder.Entity<Meeting>().Property(m => m.Date);
 
             builder.Entity<Verkoper>().Property(v => v.Name).IsRequired().HasMaxLength(50);
             builder.Entity<Verkoper>().Property(v => v.Title).HasMaxLength(50);
@@ -28,8 +28,8 @@ namespace MeetingAPI.Data
             builder.Entity<Customer>().Property(c => c.LastName).HasMaxLength(50);
                 
             builder.Entity<Meeting>().HasData(
-                new Meeting { Id = 1, Name = "Pascale Engels", Planned = DateTime.Now.AddDays(7) },
-                new Meeting { Id = 2, Name = "Gautier de Bruijne", Planned = DateTime.Now.AddDays(9) }
+                new Meeting { Id = 1, Name = "Pascale Engels", Date = "test" },
+                new Meeting { Id = 2, Name = "Gautier de Bruijne", Date = "test" }
                 );
 
             builder.Entity<Verkoper>().HasData(

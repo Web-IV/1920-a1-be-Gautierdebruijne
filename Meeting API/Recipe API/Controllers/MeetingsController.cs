@@ -38,7 +38,7 @@ namespace MeetingAPI.Controllers
         public IEnumerable<Meeting> GetMeetings(string name = null, string verkoper = null)
         {
             if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(verkoper))
-                return _meetingRepository.GetAll().OrderBy(m => m.Planned);
+                return _meetingRepository.GetAll().OrderBy(m => m.Date);
             return _meetingRepository.GetBy(name, verkoper);
         }
 
@@ -96,7 +96,7 @@ namespace MeetingAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<Meeting> PostMeeting(MeetingDTO meeting)
         {
-            Meeting meetingToCreate = new Meeting() { Name = meeting.Name, Planned = meeting.Planned };
+            Meeting meetingToCreate = new Meeting() { Name = meeting.Name, Date = meeting.Date };
             foreach (var i in meeting.Verkopers)
                 meetingToCreate.AddVerkoper(new Verkoper(i.Name, i.Title));
             

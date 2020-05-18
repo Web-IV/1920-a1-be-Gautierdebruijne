@@ -46,7 +46,7 @@ namespace MeetingAPI.Data
             if (!string.IsNullOrEmpty(verkoperName))
                 meetings = meetings.Where(m => m.Verkopers.Any(m => m.Name == verkoperName));
 
-            return meetings.OrderBy(m => m.Planned);
+            return meetings.OrderBy(m => m.Date);
         }
 
         public void SaveChanges()
