@@ -29,12 +29,21 @@ namespace MeetingAPI.Data
                 
             builder.Entity<Meeting>().HasData(
                 new Meeting { Id = 1, Name = "Pascale Engels", Date = DateTime.Now.AddDays(2)},
-                new Meeting { Id = 2, Name = "Gautier de Bruijne", Date = DateTime.Now.AddDays(7)}
+                new Meeting { Id = 2, Name = "Gautier de Bruijne", Date = DateTime.Now.AddDays(7)},
+                new Meeting { Id = 3, Name = "Luna van Damme", Date = DateTime.Now.AddDays(3) },
+                new Meeting { Id = 4, Name = "Rita De Wilde", Date = DateTime.Now.AddDays(9) },
+                new Meeting { Id = 5, Name = "Thomas Aelterman", Date = DateTime.Now.AddDays(11) },
+                new Meeting { Id = 6, Name = "fam. Foubert", Date = DateTime.Now.AddDays(32) }
                 );
 
             builder.Entity<Verkoper>().HasData(
                 new { Id = 1, Name = "Jo de Bruijne", Title = "Verkoopsverantwoordelijke", MeetingId = 1 },
-                new { Id = 2, Name = "Stefaan Durwael", Title = "", MeetingId = 1}
+                new { Id = 2, Name = "Stefaan Durwael", Title = "Vertegenwoordiger", MeetingId = 1},
+                new { Id = 3, Name = "Jo de Bruijne", Title = "Verkoopsverantwoordelijke", MeetingId = 2 },
+                new { Id = 4, Name = "Stefaan Durwael", Title = "Vertegenwoordiger", MeetingId = 3 },
+                new { Id = 5, Name = "Gunter van Damme", Title = "CEO", MeetingId = 3 },
+                new { Id = 6, Name = "Jo de Bruijne", Title = "Verkoopsverantwoordelijke", MeetingId = 6 },
+                new { Id = 7, Name = "Gunter van Damme", Title = "CEO", MeetingId = 6 }
                 );
         }
 

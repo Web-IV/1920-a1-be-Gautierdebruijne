@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WinddichtAPI" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting\ API\\Recipe\ API\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="MeetingAPI.Data.MeetingContext" description="" value="Server=tcp:winddicht.database.windows.net,1433;Initial Catalog=database;Persist Security Info=False;User ID=Gautier;Password=W!ndd!cht249;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\Users\\gauti\\source\\repos\\Web-IV\\1920-a1-be-Gautierdebruijne\\Meeting\ API\\Recipe\ API\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\MeetingAPI\.Data\.MeetingContext\.sql$" />
+  </parameter>
+</parameters>

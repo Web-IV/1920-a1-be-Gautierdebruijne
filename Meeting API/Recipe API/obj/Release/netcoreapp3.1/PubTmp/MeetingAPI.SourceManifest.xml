@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Release\netcoreapp3.1\PubTmp\Out\" />
+  <dbfullsql path="D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Release\netcoreapp3.1\PubTmp\EFSQLScripts\MeetingAPI.Data.MeetingContext.sql" />
+</sitemanifest>

@@ -1,4 +1,4 @@
-    using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -66,16 +66,6 @@ namespace MeetingAPI
                 d.Title = "Meeting API";
                 d.Version = "v0.2";
                 d.Description = "Documentation for the Meeting API, created by Gautier de Bruijne";
-
-                //d.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme 
-                //{ 
-                //    Type = SwaggerSecuritySchemeType.ApiKey, 
-                //    Name = "Authorization", 
-                //    In = SwaggerSecurityApiKeyLocation.Header, 
-                //    Description = "Copy 'Bearer' + valid JWT token into field" 
-                //}));
-
-                //Doesn't find all classes with given packages
 
                 d.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme 
                 { 
