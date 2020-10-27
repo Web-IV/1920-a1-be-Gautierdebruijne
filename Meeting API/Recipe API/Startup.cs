@@ -110,15 +110,14 @@ namespace MeetingAPI
             }
 
             app.UseHttpsRedirection();
+            app.UseRouting();
 
             app.UseOpenApi();
             app.UseSwaggerUi3();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-            app.UseAuthentication();
             app.UseCors("AllowAllOrigins");
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

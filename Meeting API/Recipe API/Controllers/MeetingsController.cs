@@ -15,7 +15,7 @@ namespace MeetingAPI.Controllers
     [Produces("application/json")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class MeetingsController : ControllerBase
     {
         private readonly IMeetingRepository _meetingRepository;
