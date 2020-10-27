@@ -150,4 +150,3 @@ D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recip
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\Users\gauti\source\repos\Web-IV\1920-a1-be-Gautierdebruijne\Meeting API\Recipe API\obj\Debug\netcoreapp3.1\MeetingAPI.csproj.CoreCompileInputs.cache
